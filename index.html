@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="container mx-auto lg:px-12 my-5">
+        <div class="navbar bg-base-100">
+            <div class="flex-1">
+                <a class="btn btn-ghost text-xl">daisyUI</a>
+            </div>
+            <div class="flex-none">
+                <ul class="menu menu-horizontal px-1 space-x-8">
+                    <div class="space-x-3">
+                        <div class="tooltip" data-tip="Home">
+                            <button class="btn rounded-full p-3"><img src="images/Frame.png" alt=""></button>
+                        </div>
+                        <div class="tooltip" data-tip="Blog">
+                            <button class="btn rounded-full p-3"><img src="images/Vector.png" alt=""></button>
+                        </div>
+                        <div class="tooltip" data-tip="Add">
+                            <button class="btn rounded-full p-3"><img src="images/Vector (1).png" alt=""></button>
+                        </div>
+                        <div class="tooltip" data-tip="Flag">
+                            <button class="btn rounded-full p-3"><img src="images/Vector (2).png" alt=""></button>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="btn rounded-3xl text-white bg-[#797DFC] px-6 font-semibold">Sign In</button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="container mx-auto  lg:px-12  py-5 ">
+        <!-- Banner Section Start -->
+        <section>
+            <div
+                class="mb-36 lg:mb-0 bg-[url('images/banner.png')] bg-[#12132D] bg-no-repeat bg-cover rounded-2xl bg-center h-[550px] w-full ">
+
+
+                <div class="flex flex-col md:flex-row w-[80%] mx-auto min-h-[500px] justify-between items-center">
+                    <div class=" space-y-5 md:space-y-8">
+                        <h1 class="text-[40px] md:text-[64px] font-bold text-white">Welcome to the ReTro Forum</h1>
+                        <p class="text-white">Share your favorite opinion and win and wp forum coffee mug!</p>
+
+                        <div class="relative mb-6 ">
+                            <input id="searchField" class=" rounded-3xl py-4 pl-[22px]  placeholder:text-sm w-[400px]" type="text"
+                                placeholder="Have any coupon?">
+                            <button onclick="handleSearch()" 
+                                class="absolute rounded-3xl right-7 md:right-[170px] top-1 px-6 btn font-semibold text-white bg-[#797DFC]">Search</button>
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <div class="card w-96 bg-slate-100 ">
+                            <div class="card-body space-y-4">
+
+                                <div class="flex justify-between items-center">
+                                    <p>Registered Users</p>
+                                    <p class="text-right">0</p>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>Forum</p>
+                                    <p class="text-right">0</p>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>Topics</p>
+                                    <p class="text-right">0</p>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p>Replies</p>
+                                    <p class="text-right">0</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section>
+            <div class="py-4 lg:pt-[120px] text-center">
+                <h1 class="font-raleway text-xl lg:text-[40px] font-bold text-[#030712]">Let’s Discuss</h1>
+                <p class="lg:text-lg lg:w-[691px] mx-auto my-6 text-[#030712CC]">Yes, you can run unit tests and view
+                    the results directly within the app. The integrated testing features allow for a streamlined .</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between gap-6">
+                <div id="posts-container"  class="md:w-[65%] ">
+                    
+                </div>
+
+                <div  class=" md:w-[35%] mx-auto">
+                    <div class="card w-96 bg-slate-100 ">
+                        <div class="card-body ">
+                            <div class="flex justify-between items-center">
+                                <h1 class="font-bold">Title</h1>
+                                <div class="flex gap-2 items-center">
+                                    <img src="images/t5.png" alt="">
+                                    <p>Marked as read (<span id="count">0</span>)</p>
+                                </div>
+                            </div>
+                            <div id="timeline-container" class="">
+                               
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mt-20">
+            <div
+                class="mb-36 lg:mb-0  md:bg-[url('images/joinforum.png')] bg-[#12132D] bg-no-repeat rounded-2xl bg-right h-[450px] w-full ">
+
+
+                <div class="flex flex-col md:flex-row w-[90%] mx-auto min-h-[450px] justify-between items-center">
+                    <div class=" space-y-5 md:space-y-8">
+                        <h1 class="text-[54px] pt-20 md:pt-0 md:text-[64px] font-bold text-white">Join Our Forum</h1>
+                        <p class="text-white">Share your favorite opinion and win and wp forum coffee mug! Yes, you can
+                            run unit tests and view the results directly within the app. </p>
+
+                        <div class="mb-6 ">
+                            <button
+                                class="btn rounded-3xl text-white bg-[#797DFC] px-6 font-semibold border-none">Registered
+                                Now</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class=" lg:pt-[120px] text-center">
+                <h1 class="font-raleway text-xl lg:text-[40px] font-bold text-[#030712]">Latest Posts</h1>
+                <p class="lg:text-lg lg:w-[691px] mx-auto my-6 text-[#030712CC]">Yes, you can run unit tests and view
+                    the results directly within the app. The integrated testing features allow for a streamlined .</p>
+            </div>
+
+
+            <div id="latest-post" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-3">
+            </div>
+
+
+        </section>
+
+
+    </main>
+    <footer>
+        <footer class="footer footer-center p-10 py-24 bg-[#12132D0D] text-primary-content">
+            <aside>
+                <div class="w-[70%] mx-auto space-y-10 text-[#12132D]">
+                    <h1 class="font-bold text-4xl">ReTro</h1>
+                    <p class="font-bold">
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                        classical Latin literature from 45 BC
+                    </p>
+                </div>
+    
+                    <div class="grid grid-flow-col gap-4 py-4">
+                        <img src="images/1.png" alt="">
+                        <img src="images/2.png" alt="">
+                        <img src="images/3.png" alt="">
+                        <img src="images/4.png" alt="">
+                    </div>
+                
+                <div class="w-full border-t-2 border-dashed">
+                    <p class="pt-8 text-gray-400">2017, All Rights Reserved.</p>
+                </div>
+
+            </aside>
+
+        </footer>
+    </footer>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
