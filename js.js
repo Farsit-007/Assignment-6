@@ -1,5 +1,4 @@
 let count = 0;
-
 const fetchCategory = async () => {
 const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts');
     const data = await res.json();
@@ -9,66 +8,8 @@ const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/po
     postContainer.innerHTML = '<div class="flex justify-center "><span class="loading loading-spinner loading-md"></span></div>';
     setTimeout(() => {
         displayCategory(card);
-        if (card.length === 0) {
-            displayNoResults();
-        } else {
-            displayCategory(card);
-        };
     }, 2000);
-
-
 }
-const fetchCategory2 = async (SearchText) => {
-    try{ 
-     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${SearchText}`);
-     const data = await res.json();
-     const card = data.posts;
-   
-     setTimeout(() => {
-        displayCategory(card);
-        if (card.length === 0) {
-            displayNoResults();
-        } else {
-            displayCategory(card);
-        };
-    }, 2000);
- }
- catch(error){
-     console.error(error);
-     displayNoResults();
- }
- }
- 
-
-const displayNoResults = () => {
-    const postContainer = document.getElementById('posts-container');
-    postContainer.textContent = '';
-
-    const noResultMessage = document.createElement('div');
-    noResultMessage.textContent = ' No Results Found';
-    postContainer.appendChild(noResultMessage);
-}
-
-const handleSearch = () => {
-    const searchField = document.getElementById('searchField');
-    const SearchText = searchField.value;
-    const postContainer = document.getElementById('posts-container');
-    postContainer.innerHTML = '<div class="flex justify-center"><span class="loading loading-spinner loading-md"></span></div>';
-    if (SearchText !== '') {
-        postContainer.innerHTML = '<div class="flex justify-center"><span class="loading loading-spinner loading-md"></span></div>';
-        setTimeout(() => {
-            fetchCategory2(SearchText);
-        }, 2000);
-    } 
-    else {
-        postContainer.innerHTML = '<div class="flex justify-center"><span class="loading loading-spinner loading-md"></span></div>';
-        setTimeout(() => {
-            displayNoResults();
-        }, 2000);
-    }
-}
-
-
 
 const displayCategory = (card) => {
     const postContainer = document.getElementById('posts-container');
@@ -128,6 +69,31 @@ const displayCategory = (card) => {
 }
 
 
+const displayNoResults = () => {
+    const postContainer = document.getElementById('posts-container');
+    postContainer.textContent = '';
+
+    const noResultMessage = document.createElement('div');
+    noResultMessage.textContent = ' No Results Found';
+    postContainer.appendChild(noResultMessage);
+}
+
+const handleSearch = () => {
+    const searchField = document.getElementById('searchField');
+    const searchText = searchField.value.trim();
+    const postContainer = document.getElementById('posts-container');
+    postContainer.innerHTML = '<div class="flex justify-center"><span class="loading loading-spinner loading-md"></span></div>';
+
+    setTimeout(() => {
+        if (searchText !== '') {
+            fetchCategory2(searchText);
+        } else {
+            displayNoResults();
+        }
+    }, 2000);
+}
+
+
 const clickApped = (card1) => {
     const timeLine = document.getElementById('timeline-container');
     const newTimeLine = document.createElement('div');
@@ -144,12 +110,24 @@ const clickApped = (card1) => {
     timeLine.appendChild(newTimeLine);
 }
 
-
-
-
-
-
-
+const fetchCategory2 = async (SearchText) => {
+    try{ 
+     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${SearchText}`);
+     const data = await res.json();
+     const card = data.posts;
+     displayCategory(card);
+     if (card.length === 0) {
+         displayNoResults();
+     } else {
+         displayCategory(card);
+     };
+ }
+ catch(error){
+     console.error(error);
+     displayNoResults();
+ }
+ }
+ 
 
 const fetchCategory3 = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
