@@ -23,7 +23,7 @@ const displayCategory = (card) => {
                 <img class="flex-1 rounded-md border md:p-0" src="${card1.image}" width="70px" alt="Movie"/>
                 <div class="absolute top-7 left-16 md:-right-1  h-5 w-5 rounded-full ${isActive ? 'bg-green-600' : 'bg-red-600'}"></div>
             </div>
-            <div class="card-body p-2 md:p-8 flex-1 space-y-1 lg:w-[65%]">
+            <div class="card-body p-4 md:p-8 flex-1 space-y-1 lg:w-[65%]">
                 <div class="flex items-center gap-8">
                     <div>
                         <p># ${card1.category}</p>
@@ -62,7 +62,6 @@ const displayCategory = (card) => {
             const counter = document.getElementById('count');
             count = count + 1;
             counter.innerText = count;
-
             clickApped(card1);
         });
     });
@@ -100,7 +99,7 @@ const clickApped = (card1) => {
     newTimeLine.className = 'flex justify-between items-center bg-white p-3 rounded-lg mt-3';
     newTimeLine.innerHTML = `
         <div class="w-[70%]">
-            <p>${card1.title}</p>
+            <p class="font-bold">${card1.title}</p>
         </div>
         <div class="flex items-center gap-2">
             <img src="images/t2.png" alt="">
@@ -141,7 +140,7 @@ const displayCategory2 = (card2) => {
     const latestpostContainer = document.getElementById('latest-post');
     card2.forEach((cards) => {
         const newcard1 = document.createElement('div');
-        newcard1.className = 'card card-compact w-80 md:w-96 mx-auto bg-base-100 shadow-xl h-[510px] p-3';
+        newcard1.className = 'card card-compact w-[90%] md:w-96 mx-auto bg-base-100 shadow-xl h-[510px] p-3';
         newcard1.innerHTML = `
         <figure class="mt-3 rounded-md"><img src="${cards.cover_image}" alt="Shoes" /></figure>
                     <div class="card-body">
@@ -150,7 +149,7 @@ const displayCategory2 = (card2) => {
                       <h2>${cards.author.posted_date || "No Publish Date"}</h2>
                       </div>
                        
-                        <h2 class="card-title">${cards.title}</h2>
+                        <h2 class="card-title font-bold">${cards.title}</h2>
                         <p class="">${cards.description}</p>
                         <div class="flex gap-4">
                             <div >
