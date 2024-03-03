@@ -11,14 +11,14 @@
 </head>
 
 <body>
-    <header class="container mx-auto lg:px-12 my-5">
+    <header class="container mx-auto px-2 lg:px-12 mt-4">
         <div class="navbar bg-base-100">
             <div class="flex-1">
                 <a class="btn btn-ghost text-xl">daisyUI</a>
             </div>
-            <div class="flex-none">
+            <div class="flex-none ">
                 <ul class="menu menu-horizontal px-1 space-x-8">
-                    <div class="space-x-3">
+                    <div class="space-x-3 hidden md:block">
                         <div class="tooltip" data-tip="Home">
                             <button class="btn rounded-full p-3"><img src="images/Frame.png" alt=""></button>
                         </div>
@@ -39,29 +39,29 @@
             </div>
         </div>
     </header>
-    <main class="container mx-auto  lg:px-12  py-5 ">
+    <main class="container mx-auto  lg:px-12  ">
         <!-- Banner Section Start -->
         <section>
             <div
-                class="mb-36 lg:mb-0 bg-[url('images/banner.png')] bg-[#12132D] bg-no-repeat bg-cover rounded-2xl bg-center h-[550px] w-full ">
+                class=" bg-[url('images/banner.png')] bg-[#12132D] bg-no-repeat bg-cover rounded-2xl bg-center h-[530px] md:h-[500px] w-full ">
 
 
                 <div class="flex flex-col md:flex-row w-[80%] mx-auto min-h-[500px] justify-between items-center">
-                    <div class=" space-y-5 md:space-y-8">
+                    <div class=" space-y-2 md:space-y-8">
                         <h1 class="text-[40px] md:text-[64px] font-bold text-white">Welcome to the ReTro Forum</h1>
                         <p class="text-white">Share your favorite opinion and win and wp forum coffee mug!</p>
 
-                        <div class="relative mb-6 ">
-                            <input id="searchField" class=" rounded-3xl py-4 pl-[22px]  placeholder:text-sm w-[400px]" type="text"
-                                placeholder="Have any coupon?">
+                        <div class="relative md:mb-6 ">
+                            <input id="searchField" class=" rounded-3xl py-4 pl-[22px]  placeholder:text-sm w-[300px] md:w-[400px]" type="text"
+                                placeholder="Search here anything">
                             <button onclick="handleSearch()" 
-                                class="absolute rounded-3xl right-7 md:right-[170px] top-1 px-6 btn font-semibold text-white bg-[#797DFC]">Search</button>
+                                class="absolute rounded-3xl right-5 md:right-[170px] top-1 px-6 btn font-semibold text-white bg-[#797DFC]">Search</button>
                         </div>
 
                     </div>
 
                     <div>
-                        <div class="card w-96 bg-slate-100 ">
+                        <div class="card w-80 md:w-96 bg-slate-100 ">
                             <div class="card-body space-y-4">
 
                                 <div class="flex justify-between items-center">
@@ -91,9 +91,9 @@
 
 
         <section>
-            <div class="py-4 lg:pt-[120px] text-center">
+            <div class="pt-[30px] text-center pb-3">
                 <h1 class="font-raleway text-xl lg:text-[40px] font-bold text-[#030712]">Let’s Discuss</h1>
-                <p class="lg:text-lg lg:w-[691px] mx-auto my-6 text-[#030712CC]">Yes, you can run unit tests and view
+                <p class="lg:text-lg w-[90%] md:w-[70%] mx-auto my-6 text-[#030712CC]">Yes, you can run unit tests and view
                     the results directly within the app. The integrated testing features allow for a streamlined .</p>
             </div>
 
@@ -103,7 +103,7 @@
                 </div>
 
                 <div  class=" md:w-[35%] mx-auto">
-                    <div class="card w-96 bg-slate-100 ">
+                    <div class="card w-80 md:w-96 bg-slate-100 ">
                         <div class="card-body ">
                             <div class="flex justify-between items-center">
                                 <h1 class="font-bold">Title</h1>
@@ -150,7 +150,7 @@
         <section>
             <div class=" lg:pt-[120px] text-center">
                 <h1 class="font-raleway text-xl lg:text-[40px] font-bold text-[#030712]">Latest Posts</h1>
-                <p class="lg:text-lg lg:w-[691px] mx-auto my-6 text-[#030712CC]">Yes, you can run unit tests and view
+                <p class="lg:text-lg w-[90%] md:w-[70%] mx-auto my-6 text-[#030712CC]">Yes, you can run unit tests and view
                     the results directly within the app. The integrated testing features allow for a streamlined .</p>
             </div>
 

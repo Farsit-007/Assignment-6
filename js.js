@@ -17,13 +17,13 @@ const displayCategory = (card) => {
     card.forEach((card1) => {
         const isActive = card1.isActive;
         const newcard = document.createElement('div');
-        newcard.className = 'card lg:card-side bg-base-100 mb-5 border-[1px] bg-[#F3F3F5] border-[#0D0D181A]  lg:pl-6';
+        newcard.className = 'card lg:card-side bg-base-100 mb-5 border-[1px] bg-[#F3F3F5] border-[#0D0D181A]  lg:pl-6 ';
         newcard.innerHTML = `
             <div class="pt-8 relative ">
                 <img class="flex-1 rounded-md border md:p-0" src="${card1.image}" width="70px" alt="Movie"/>
                 <div class="absolute top-7 left-16 md:-right-1  h-5 w-5 rounded-full ${isActive ? 'bg-green-600' : 'bg-red-600'}"></div>
             </div>
-            <div class="card-body flex-1 space-y-1 lg:w-[65%]">
+            <div class="card-body p-2 md:p-8 flex-1 space-y-1 lg:w-[65%]">
                 <div class="flex items-center gap-8">
                     <div>
                         <p># ${card1.category}</p>
@@ -35,7 +35,7 @@ const displayCategory = (card) => {
                 <h2 class="card-title text-lg md:text-xl font-extrabold">${card1.title}</h2>
                 <p class="text-base font-medium">${card1.description}</p>
                 <div class="flex justify-between border-t-2 border-dashed pt-4">
-                    <div class="flex md:items-center gap-6 ">
+                    <div class="flex md:items-center gap-2 md:gap-6 ">
                         <div class="flex items-center py-3 gap-2">
                             <img src="images/t1.png" alt="">
                             <p class="">${card1.comment_count}</p>
@@ -141,7 +141,7 @@ const displayCategory2 = (card2) => {
     const latestpostContainer = document.getElementById('latest-post');
     card2.forEach((cards) => {
         const newcard1 = document.createElement('div');
-        newcard1.className = 'card card-compact w-96 mx-auto bg-base-100 shadow-xl h-[510px] p-3';
+        newcard1.className = 'card card-compact w-80 md:w-96 mx-auto bg-base-100 shadow-xl h-[510px] p-3';
         newcard1.innerHTML = `
         <figure class="mt-3 rounded-md"><img src="${cards.cover_image}" alt="Shoes" /></figure>
                     <div class="card-body">
