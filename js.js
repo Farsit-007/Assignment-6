@@ -73,7 +73,7 @@ const displayNoResults = () => {
     postContainer.textContent = '';
 
     const noResultMessage = document.createElement('div');
-    noResultMessage.textContent = ' No Results Found';
+    noResultMessage.textContent = `No Results Found`;
     postContainer.appendChild(noResultMessage);
 }
 
@@ -170,8 +170,4 @@ const displayCategory2 = (card2) => {
 
 
 fetchCategory3();
-
-
-
-
 fetchCategory();
